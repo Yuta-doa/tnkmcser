@@ -32,12 +32,54 @@
             font-size: 1.2rem;
             margin: 0;
         }
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+        .arrow.left {
+            left: 10px;
+        }
+        .arrow.right {
+            right: 10px;
+        }
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
         }
-        .video-section, .info-section, .how-to-section {
+        .info-section, .how-to-section {
             margin: 20px 0;
             padding: 20px;
             background-color: #1c1c1c;
@@ -48,10 +90,6 @@
             font-size: 2rem;
             margin-bottom: 10px;
             color: #4caf50;
-        }
-        video {
-            width: 100%;
-            border-radius: 8px;
         }
         .server-details {
             display: flex;
@@ -107,16 +145,27 @@
         <p>JAVA版も統合版も楽しめるクロスプレイ対応サーバー</p>
     </header>
 
-    <div class="container">
-        <!-- 動画セクション -->
-        <div class="video-section">
-            <h2>サーバー紹介動画</h2>
-            <video controls>
-                <source src="https://tnkdouga4.my.canva.site/gek1/videos/aabad0838c2bedc2cf2827e093b0a5b25.mp4" type="video/mp4">
-                お使いのブラウザは動画タグをサポートしていません。
-            </video>
+    <!-- カルーセルセクション -->
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-item">
+                <video controls>
+                    <source src="https://example.com/video1.mp4" type="video/mp4">
+                    お使いのブラウザは動画タグをサポートしていません。
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video controls>
+                    <source src="https://example.com/video2.mp4" type="video/mp4">
+                    お使いのブラウザは動画タグをサポートしていません。
+                </video>
+            </div>
         </div>
+        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
 
+    <div class="container">
         <!-- サーバー情報セクション -->
         <div class="info-section">
             <h2>サーバー情報</h2>
@@ -164,5 +213,20 @@
     <footer>
         <p>© 2025 TNK首都圏動画係マイクラサーバー運営 | <a href="#">プライバシーポリシー</a></p>
     </footer>
+
+    <script>
+        let currentIndex = 0;
+        const container = document.querySelector('.carousel-container');
+        const items = document.querySelectorAll('.carousel-item');
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = items.length - 1; // 最後のスライドに移動
+            } else if (currentIndex >= items.length) {
+                currentIndex = 0; // 最初のスライドに移動
+            }
+            container.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
 </body>
-</html>
