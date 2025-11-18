@@ -1,9 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>動画係マイクラサーバー - コンソール版の入り方</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>動画係公式マイクラ鯖</title>
+    <!-- ファビコン -->
+  <link rel=”icon” href=“/favicon.ico”>
+  <link rel=”icon” type=”image/vnd.microsoft.icon” href=“/favicon.ico”>
+  <link rel=”shortcut icon” href=”/favicon.ico”>
+  <!-- ページの説明 -->
+  <meta name="description" content="動画係マイクラサーバーはJAVA版と統合版に対応したクロスプレイ可能なサーバーです。FastServer v4接続方法を含む、多様なサーバー情報を提供します。ただしJAVA限定です。">
+  <!-- 検索キーワード -->
+  <meta name="keywords" content="Minecraft, マイクラ, サーバー, クロスプレイ, JAVA版, 統合版, FastServer v4, Minecraftサーバー,動画係,TNK,TNK首都圏,TNK首都圏局まいくら鯖部">
+  <!-- サイト運営者情報 -->
+  <meta name="author" content="運営Sky System 協力 動画係サークルマイクラサーバー運営部">
     <style>
         body {
             margin: 0;
@@ -72,6 +83,53 @@
         footer a:hover {
             text-decoration: underline;
         }
+      .copy-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.copy-section strong {
+    width: 120px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.copy-input {
+    flex: 1;
+    padding: 8px 12px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3a3a3a;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.copy-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #4caf50;
+}
+
+.copy-button {
+    padding: 8px 12px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+    background-color: #45a049;
+}
+
     </style>
 </head>
 <body>
@@ -84,6 +142,8 @@
             <h2>コンソール版サーバーに接続する方法</h2>
             <ol>
                 <li>
+                    **更に詳しい接続方法は<a href="https://x.gd/fj4Wi">こちら</a>で紹介しています。
+                <li>
                     **Microsoftアカウントにログイン**<br>
                     Minecraftにログインするには、Microsoftアカウントが必要です。
                 </li>
@@ -92,37 +152,77 @@
                     マイクラの「フレンド追加」で「svcn1」または「svcn2」と入力し、フレンドリクエストを送信します。
                 </li>
                 <li>
+                  <a href="https://www.svcn.pgw.jp/gemertag">入れない場合こちらのサイトを御覧くださう</a>
+                </li>
+                <li>
                     **外部サーバーへ接続**<br>
                     フレンドの欄に戻り、「外部サーバーへ接続」を選択します。
                 </li>
+                <li>
+                   ++コンパスでサーバー接続++
+                  サーバーに接続できたらコンパスを開いてください。
+                </li>
+               <li>
+                   **サーバーを追加**
+                  サーバーリスト画面で「サーバーを追加」ボタンを押します
                 <li>
                     **Manage Server Listを選択**<br>
                     「Manage Server List」をクリックし、「Add a Server」を選択します。
                 </li>
                 <li>
-                    **サーバー情報を入力**<br>
-                    以下の情報を入力してください：
-                    <ul>
-                        <li><strong>Server Address:</strong> 147.185.221.25</li>
-                        <li><strong>Server Port:</strong> 1304</li>
-                        <li><strong>Display Name on Server List:</strong> お好きなサーバー名を入力（任意）</li>
-                    </ul>
+            <!-- ステップ8 -->
+            <div class="step-card">
+                <div class="step-content">
+                    <div class="step-header">
+                        <div class="step-number">8</div>
+                        <h3 class="step-title">サーバー情報を入力</h3>
+                    </div>
+                    <p>以下の情報を入力してサーバーを追加します</p>
+                    <p>※説明は任意で入力してください</p>
+
+                    <div class="info-panel">
+                        <div class="copy-section">
+                            <strong>IPアドレス:</strong>
+                            <input type="text" class="copy-input" id="serverIP" value="mcsk.aternos.me" readonly>
+                            <button class="copy-button" data-target="serverIP">コピー</button>
+                        </div>
+                        <div class="copy-section">
+                            <strong>ポート番号:</strong>
+                            <input type="text" class="copy-input" id="serverPort" value="41763" readonly>
+                            <button class="copy-button" data-target="serverPort">コピー</button>
+                        </div>
+                        <div class="copy-section">
+                            <strong>サーバー名:</strong>
+                            <input type="text" class="copy-input" id="serverName" value="41763" readonly>
+                            <button class="copy-button" data-target="serverName">コピー</button>
+                        </div>
+                    </div>
+                </div>
                 </li>
                 <li>
-                    **送信をクリック**<br>
-                    「送信」をクリックして設定を保存します。
+                    **保存するをオンまたはオフにする<br>
+                    「保存する」オプションを設定します
+                  ※オンにするとリストに保存され今後からも参加できます
+                  頻繁に参加するサーバーの場合はオンにしておくことをおすすめします
                 </li>
                 <li>
-                    **サーバーに接続**<br>
-                    最初のページに戻り、追加したサーバーを選択してゲームを開始します。
+                    **登録するを押してサーバーへ参加！**<br>
+                    「登録する」ボタンを押してサーバーに接続します
+                     初回接続時はリソースのダウンロードに時間がかかる場合があります
+                </li>
+                <li>
+                  クレジット表記<br>
+                  サービス名: MCEasyLink<br>
+                  提供元: MCEasyLink Team<br>
+                  URL: https://www.svcn.pgw.jp/
                 </li>
             </ol>
         </section>
-        <p>さらにサポートが必要な場合は、<a href="support.html">こちらのサポートページ</a>をご覧ください。</p>
+        <p>さらにサポートが必要な場合は、<a href="https://discord.gg/DAwuQngsDb">こちらの公式Discord</a>をご覧ください。</p>
     </div>
 
     <footer>
-        <p>© 2025 TNK首都圏動画係マイクラサーバー運営 | <a href="#">プライバシーポリシー</a></p>
+         <<p>© 2025 動画係公式マイクラ鯖 | 運営Sky System 協力 動画係サークルマイクラサーバー運営部</p>
     </footer>
 </body>
 </html>
