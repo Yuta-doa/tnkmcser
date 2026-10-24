@@ -1,69 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+<meta charset="utf-8">
 <!-- This site is hosted on Netlify. Anyone can build and deploy a site
-     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=52b6e112-8386-42c2-a582-1213d14dc5ff
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=1f7b7754-a09a-4eaf-9440-094f1a9976b9
      Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【緊急メンテナンスのお知らせ】</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 600px;
-            width: 100%;
-            background-color: #ffffff;
-            border-top: 5px solid #dc3545; /* 赤色のアクセントライン */
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-        h1 {
-            color: #dc3545;
-            font-size: 24px;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: left; /* 文章を読みやすく左詰めに */
-            white-space: pre-wrap; /* 改行をそのまま反映 */
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #6c757d;
-            text-align: center;
-        }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>緊急メンテナンスのお知らせ</title>
+<style>
+  :root { color-scheme: light; --red:#ef3340; --ink:#202733; --muted:#687789; --line:#e4e8ed; --panel:#f7f8fa; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:32px 16px; background:#f5f7f9; color:var(--ink); font-family:Arial,"Noto Sans JP",sans-serif; font-size:14px; line-height:1.8; }
+  .page { width:min(100%,650px); margin:0 auto; padding:28px 30px 30px; background:#fff; border-top:4px solid var(--red); border-radius:8px; box-shadow:0 4px 18px #1522380d; }
+  h1 { margin:0 0 18px; text-align:center; color:var(--red); font-size:21px; line-height:1.5; }
+  p { margin:0 0 14px; }
+  .panel { margin-top:20px; padding:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+  h2 { margin:0 0 8px; font-size:16px; }
+  .badge { display:inline-block; margin:0 0 8px; padding:3px 10px; border-radius:20px; background:#fff0c2; color:#785300; font-size:12px; font-weight:700; }
+  .badgegb { display:inline-block; margin:0 0 8px; padding:3px 10px; border-radius:20px; background:#00BC48; color:#fff; font-size:12px; font-weight:700; }
+  .badge.neutral { background:#e9edf1; color:#4b5967; }
+  .steps { list-style:none; padding:0; margin:16px 0 0; }
+  .steps li { position:relative; padding:10px 0 10px 17px; border-bottom:1px solid #e5e9ee; }
+  .steps li:last-child { border-bottom:0; padding-bottom:0; }
+  .steps li::before { content:""; position:absolute; left:0; top:18px; width:9px; height:9px; border-radius:50%; background:#adb5bd; }
+  .steps li.current::before { background:#d9a300; }
+  .step-title { display:block; font-weight:700; }
+  .step-note { display:block; color:var(--muted); font-size:12px; }
+  .service { margin-top:12px; padding:16px 18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+  .service h2 { margin:0 0 5px; font-size:15px; }
+  .service p { margin:4px 0 0; }
+  footer { margin-top:26px; text-align:center; color:var(--muted); font-size:11px; }
+  footer p { margin:3px 0; }
+  a { color:inherit; }
+  @media (max-width:480px) { body{padding:16px 10px;} .page{padding:24px 18px;} h1{font-size:19px;} }
+</style>
 </head>
 <body>
+<main class="page">
+  <h1>【緊急メンテナンスのお知らせ】</h1>
+  <p><strong>サービスの安全性確保のため、メンテナンスを実施しております。</strong></p>
+  <p>メンテナンス中は一部またはすべての機能をご利用いただけません。ご不便をおかけし申し訳ございませんが、完了まで今しばらくお待ちください。</p>
 
-<div class="container">
-    <h1>【緊急メンテナンスのお知らせ】</h1>
-    <p>サービスの安全性確保のため、緊急メンテナンスを実施しております。
-メンテナンス中はサイトのご利用ができません。完了するまで今しばらくお待ちください。
+  <section class="panel" aria-labelledby="general-progress">
+    <h2 id="general-progress">現在ご覧のサイトのメンテナンスの進捗</h2>
+    <span class="badge">動作確認中</span>
+    <p>現在、サービスを安全にご利用いただける状態にするため、必要な確認と動作テストを進めています。</p>
+    <ul class="steps">
+      <li><span class="step-title">安全性の確認</span><span class="step-note">完了</span></li>
+      <li class="current"><span class="step-title">動作確認</span><span class="step-note">現在対応中</span></li>
+      <li><span class="step-title">サービス再開</span><span class="step-note">確認が完了してからお知らせします</span></li>
+    </ul>
+  </section>
 
-ご不便をおかけし申し訳ございませんが、ご理解のほどよろしくお願いいたします。</p>
-    
-    <div class="footer">
-        &copy; 2026 DCKGrp./動画係サークル
-    </div>
-</div>
+  <section class="service">
+    <h2>動画係サークル　メンテナンスの進捗</h2>
+    <span class="badge">動作確認中</span>
+    <span class="step-note">現在対応中</span>
+    <p>DCK動画係サークル関連サイト（番組公式サイト等）も同様に対応中</p>
+  </section>
 
+  <section class="service">
+    <h2>DCKSORA　メンテナンスの進捗</h2>
+    <span class="badge">安全性の確認中</span>
+    <span class="step-note">現在サービス開始前</span>
+  </section>
+
+  <section class="service">
+    <h2>Sky System／放課後技術部　メンテナンスの進捗</h2>
+    <span class="badge">安全性の確認中</span>
+    <span class="step-note">現在対応中</span>
+  </section>
+
+  <section class="service">
+    <h2>メガネのゆっくりch非公式サイト　メンテナンスの進捗</h2>
+    <span class="badgegb">サービス再開</span>
+    <span class="step-note"></span>
+  </section>
+
+  <section class="service">
+    <h2>DCKProduction　メンテナンスの進捗</h2>
+    <span class="badge">動作確認中</span>
+    <span class="step-note">現在対応準備中</span>
+  </section>
+
+  <section class="service">
+    <h2>Winters Powered by Sky SystemGrp　メンテナンスの進捗</h2>
+    <span class="badge neutral">サービス停止なし</span>
+    <span class="step-note">お伝えする情報がありません。</span>
+  </section>
+
+  <section class="service">
+    <h2>DCIKSYSTEMS　メンテナンスの進捗</h2>
+    <span class="badge">安全性の確認中</span>
+    <span class="step-note">現在対応準備中</span>
+  </section>
+
+  <section class="service">
+    <h2>動画係マイクラ鯖　メンテナンスの進捗</h2>
+    <span class="badge">サイトの安全性の確認中</span>
+    <span class="step-note">マイクラサーバーは確認が取れ次第再開</span>
+  </section>
+
+  <footer>
+    <p>再開時期は、安全性の確認状況により変更となる場合があります。</p>
+    <p>© 2026 DCKGrp./動画係サークル</p>
+    <p>© 2025–2026 動画係グループSky System | 放課後技術部</p>
+    <p>© 2025 メガネのゆっくりch</p>
+    <p>© 2026 DCK Production. All Rights Reserved.</p>
+    <p>© 2026 Winters | <a href="https://Sky-System.netlify.app/">Sky System</a> <a href="https://Sky-System.netlify.app/houkagogijyutsu/">放課後技術部</a></p>
+    <p>© 2026 DCIKSYSTEMS All Rights Reserved. (Internal Group Site)</p>
+    <p>© 2025 動画係公式マイクラ鯖 | 協力 動画係サークルマイクラサーバー運営</p>
+  </footer>
+</main>
 </body>
 </html>
